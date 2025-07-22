@@ -19,10 +19,10 @@ function App() {
         }
         setText(newText)
       } else {
-        setText('Error 1')
+        setText('Error 246')
       }
     } catch {
-      setText('Error 2')
+      setText('Error 364')
     }
   }
 
@@ -41,7 +41,7 @@ function App() {
   const keyDown = (e) => {
      if (e.key === 'Enter') calculate()
      if (e.key === 'Escape') reset()
-      if (e.key === 'm') {
+      if (e.key.toLowerCase() === 'm') {
         setText('😎😎😎😎😎😎🤐')
       }
   }
@@ -58,69 +58,32 @@ function App() {
       </h1>
       <div className="card">
         <input
-  className="calc-input"
-  onInput={textInput}
-  autoFocus={true}
-  onKeyDown={keyDown}
-  value={text}
-  type="text"
-/>
-       <br />
-       <button className="calc-btn" onClick={(ce) => reset()}>
-          C
-        </button>
-      
-        <button className="calc-btn" onClick={() => setText(text + '1')}>
-          1
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '2')}>
-          2
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '3')}>
-          3
-        </button>
-        <br />  
-        <button className="calc-btn" onClick={(c) => setText(text + '*')}>
-          *
-        </button>
-        
-       <button className="calc-btn" onClick={() => setText(text + '4')}>
-          4
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '5')}>
-          5
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '6')}>
-          6
-        </button>
-        <br />  
-       <button className="calc-btn" onClick={(c) => setText(text + '/')}>
-          /  
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '7')}>
-          7
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '8')}>
-          8
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '9')}>
-          9
-        </button>
-        <br />  
-       <button className="calc-btn" onClick={() => setText(text + '+')}>
-          +
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '0')}>
-          0
-        </button>
-       <button className="calc-btn" onClick={() => setText(text + '-')}>
-          -
-        </button>
-        <button className="calc-btn" onClick={() => calculate()}>
-          =
-        </button>
-        
-        
+          className="calc-input"
+          onInput={textInput}
+          autoFocus={true}
+          onKeyDown={keyDown}
+          value={text}
+          type="text"
+        />
+        <br />
+        <div className="calc-grid">
+          <button className="calc-btn" onClick={reset}>C</button>
+          <button className="calc-btn" onClick={() => setText(text + '1')}>1</button>
+          <button className="calc-btn" onClick={() => setText(text + '2')}>2</button>
+          <button className="calc-btn" onClick={() => setText(text + '3')}>3</button>
+          <button className="calc-btn" onClick={() => setText(text + '*')}>*</button>
+          <button className="calc-btn" onClick={() => setText(text + '4')}>4</button>
+          <button className="calc-btn" onClick={() => setText(text + '5')}>5</button>
+          <button className="calc-btn" onClick={() => setText(text + '6')}>6</button>
+          <button className="calc-btn" onClick={() => setText(text + '/')}>/</button>
+          <button className="calc-btn" onClick={() => setText(text + '7')}>7</button>
+          <button className="calc-btn" onClick={() => setText(text + '8')}>8</button>
+          <button className="calc-btn" onClick={() => setText(text + '9')}>9</button>
+          <button className="calc-btn" onClick={() => setText(text + '+')}>+</button>
+          <button className="calc-btn" onClick={() => setText(text + '0')}>0</button>
+          <button className="calc-btn" onClick={() => setText(text + '-')}>-</button>
+          <button className="calc-btn" onClick={calculate}>=</button>
+        </div>
       </div>
      
     </>
