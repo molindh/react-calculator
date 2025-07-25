@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 
 function App() {
+  const vippsRef = useRef(null);
 
   const [text, setText] = useState('')
   const calculate = () => {
@@ -83,7 +84,20 @@ function App() {
           <button className="calc-btn" onClick={calculate}>=</button>
         </div>
       </div>
-     
+      <a href="https://qr.vipps.no/28/2/01/031/4748914364?v=1"> 
+      
+  <vipps-mobilepay-button ref={vippsRef}
+type="button"
+brand="vipps"
+language="en"
+variant="primary"
+rounded="true"
+verb="donate"
+stretched="false"
+branded="false"
+loading="false"></vipps-mobilepay-button>
+      </a>
+
     </>
   )
 }
